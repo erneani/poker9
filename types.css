@@ -3,9 +3,17 @@
   color: #ffffff;
 }
 
+.type--fire::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .type--grass {
   background-color: rgba(0, 255, 0, 0.6);
   color: #ffffff;
+}
+
+.type--grass::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .type--water {
@@ -13,9 +21,17 @@
   color: #ffffff;
 }
 
+.type--water::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .type--bug {
   background-color: #729f3f;
   color: #ffffff;
+}
+
+.type--bug::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .type--poison {
@@ -23,9 +39,17 @@
   color: #ffffff;
 }
 
+.type--poison::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .type--electric {
   background-color: #eed535;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.type--electric::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .type--fairy {
@@ -33,9 +57,17 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.type--fairy::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .type--psychic {
   background-color: #f366b9;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.type--psychic::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .type--ground {
@@ -43,9 +75,17 @@
   color: #ffffff;
 }
 
+.type--ground::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .type--fighting {
   background-color: #d56723;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.type--fighting::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .type--rock {
@@ -53,9 +93,17 @@
   color: #ffffff;
 }
 
+.type--rock::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .type--ghost {
   background-color: #7b62a3;
   color: #ffffff;
+}
+
+.type--ghost::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .type--normal {
@@ -63,12 +111,24 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.type--normal::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .type--ice {
   background-color: #51c4e7;
   color: rgba(0, 0, 0, 0.8);
 }
 
+.type--ice::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .type--dragon {
   background: linear-gradient(45deg, #53a4cf 50%, #f16e57 50%);
   color: rgba(0, 0, 0, 0.8);
+}
+
+.type-dragon::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
