@@ -1,0 +1,33 @@
+.search-pokemon__container {
+  flex-direction: column;
+  margin-bottom: 2rem;
+  align-items: center;
+  display: flex;
+}
+
+.search-pokemon__label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.search-pokemon__input {
+  background-color: #cccccc;
+  border-radius: 20px;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 1rem 1.5rem;
+  border: 0px;
+  width: 80%;
+  color: #000000;
+}
+
+.search-pokemon__input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-pokemon__input--fire {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: #ffffff;
+}

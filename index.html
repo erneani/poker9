@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="select-pokemon.css" />
+    <link rel="stylesheet" href="search-pokemon.css" />
     <link rel="stylesheet" href="cards.css" />
     <title>Poker9 - The UX friendly pokedex</title>
   </head>
@@ -50,9 +51,21 @@
     </article>
 
     <h2 class="pokemon-select__title">
-      Select a pokemon <br />
+      Select a pokémon <br />
       <span class="pokemon-select__subtitle">And see it's details</span>
     </h2>
+
+    <div class="search-pokemon__container">
+      <label for="searchPokemonInput" class="search-pokemon__label"
+        >Search pokémons</label
+      >
+      <input
+        type="text"
+        placeholder="Search the pokémon"
+        class="search-pokemon__input search-pokemon__input--fire"
+        id="searchPokemonInput"
+      />
+    </div>
 
     <div id="pokemon-cards" class="pokemon-cards">
       <div class="pokemon-card">
