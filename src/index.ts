@@ -39,7 +39,7 @@ const renderPokemonCard = (pokemonInfo: Pokemon): void => {
           ${pokemonInfo.name}
         </div>
         <span class="pokemon-card__tag pokemon-card__tag--fire">
-          ${pokemonInfo.types[0]}
+          ${pokemonInfo.types[pokemonInfo.types.length - 1]}
         </span>
       </div>
     </div>

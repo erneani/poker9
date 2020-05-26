@@ -1,5 +1,5 @@
-#pokemon-cards {
-  justify-content: start;
+#pokemonCardsContainer {
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
   display: flex;
@@ -7,8 +7,16 @@
 
 .pokemon-card {
   max-width: 300px;
+  min-width: 200px;
   border-radius: 20px;
   box-shadow: 5px 5px 30px rgba(75, 75, 75, 0.35);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.1);
 }
 
 .pokemon-card__image-wrapper {
