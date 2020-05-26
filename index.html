@@ -3,9 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Poker9 - The UX friendly pokedex</title>
   </head>
   <body>
+    <article id="pokemon-display" class="display">
+      <div class="display__pokemon-info">
+        <h3 class="display__pokemon-info__number">#006</h3>
+        <h1 class="display__pokemon-info__name">Charizard</h1>
+        <div class="display__pokemon-info__tags">
+          <span class="display__pokemon-info__tags__item">Fire</span>
+          <span class="display__pokemon-info__tags__item">Flying</span>
+        </div>
+        <div class="display__pokemon-info__basics">
+          <span class="display__pokemon-info__basics__item">
+            <b>Height: </b>1.7m
+          </span>
+          <span class="display__pokemon-info__basics__item">
+            <b>Weight: </b>90.5kg
+          </span>
+        </div>
+      </div>
+      <div class="display__pokemon-stats">
+        <span><b>HP: </b>100</span>
+        <span><b>Attack: </b>100</span>
+        <span><b>Defense: </b>100</span>
+        <span><b>SP. Attack: </b>100</span>
+        <span><b>SP. Defense: </b>100</span>
+      </div>
+      <div class="display__pokemon-image-wrapper">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+          alt="Charizard image"
+          class="display__pokemon-image-wrapper__image"
+        />
+      </div>
+    </article>
     <h1>In some time, I will be the pokedex!</h1>
   </body>
 </html>
