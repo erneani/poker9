@@ -1,0 +1,9 @@
+.pokemon-select__title {
+  font-weight: bold;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.pokemon-select__subtitle {
+  font-size: 24px;
+}
