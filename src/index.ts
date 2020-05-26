@@ -11,18 +11,19 @@ interface Pokemon {
 }
 
 const populatePokemonCards = async (): Promise<void> => {
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= 153; i++) {
     const pokemon = await getPokemon(i);
-    console.log(pokemon);
     renderPokemonCard(pokemon);
   }
 };
 
 const renderPokemonCard = (pokemonInfo: Pokemon): void => {
+  const mainType = pokemonInfo.types[pokemonInfo.types.length - 1];
+
   const pokemonHTML = `
     <div class="pokemon-card">
       <div
-        class="pokemon-card__image-wrapper pokemon-card__image-wrapper--fire"
+        class="pokemon-card__image-wrapper type--${mainType}"
       >
         <div class="pokemon-card__image">
           <img
@@ -38,7 +39,7 @@ const renderPokemonCard = (pokemonInfo: Pokemon): void => {
         <div class="pokemon-card__name">
           ${pokemonInfo.name}
         </div>
-        <span class="pokemon-card__tag pokemon-card__tag--fire">
+        <span class="pokemon-card__tag type--${mainType}">
           ${pokemonInfo.types[pokemonInfo.types.length - 1]}
         </span>
       </div>
