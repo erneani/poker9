@@ -1,0 +1,10 @@
+{
+  "name": "poker9",
+  "version": "1.0.0",
+  "description": "A pokedex with amazing UI/UX using Redux-Toolkit and Typescript.",
+  "main": "index.js",
+  "repository": "git@github.com:erneani/poker9.git",
+  "author": "Vinícius Ernani de Carvalho <viniciusernanicarvalho@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
