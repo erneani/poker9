@@ -8,58 +8,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/loading.css" />
     <link rel="stylesheet" href="./src/styles/select-pokemon.css" />
     <link rel="stylesheet" href="./src/styles/search-pokemon.css" />
     <link rel="stylesheet" href="./src/styles/cards.css" />
     <link rel="stylesheet" href="./src/styles/types.css" />
-
-    <!-- Redux toolkit -->
-    <script src="https://unpkg.com/@reduxjs/toolkit@1.3.6/dist/redux-toolkit.umd.js"></script>
     <title>Poker9 - The UX friendly pokedex</title>
   </head>
   <body>
-    <article id="pokemonDisplay" class="display">
-      <div class="display__pokemon-properties">
-        <div class="display__pokemon-info">
-          <h3 class="display__pokemon-info__number">#006</h3>
-          <h1 class="display__pokemon-info__name">Charizard</h1>
-          <div class="display__pokemon-info__tags">
-            <div class="display__pokemon-info__tags__item">Fire</div>
-            <div class="display__pokemon-info__tags__item">Flying</div>
-          </div>
-          <div class="display__pokemon-info__basics">
-            <div class="display__pokemon-info__basics__item">
-              <b>Height: </b>1.7m
-            </div>
-            <div class="display__pokemon-info__basics__item">
-              <b>Weight: </b>90.5kg
-            </div>
-          </div>
-        </div>
-        <div class="display__pokemon-stats">
-          <h3 class="display__pokemon-stats__title">Base stats</h3>
-          <span><b>HP: </b>100</span>
-          <span><b>Attack: </b>100</span>
-          <span><b>Defense: </b>100</span>
-          <span><b>SP. Attack: </b>100</span>
-          <span><b>SP. Defense: </b>100</span>
-        </div>
-      </div>
-      <div class="display__pokemon-image-wrapper">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-          alt="Charizard image"
-          class="display__pokemon-image-wrapper__image"
-        />
-      </div>
-    </article>
-
     <h2 class="pokemon-select__title">
-      Select a pokémon <br />
-      <span class="pokemon-select__subtitle">And see it's details</span>
+      Pokédex! <br />
+      <span class="pokemon-select__subtitle">Let's check them all</span>
     </h2>
 
-    <div class="search-pokemon__container">
+    <!-- <div class="search-pokemon__container">
       <label for="searchPokemonInput" class="search-pokemon__label"
         >Search pokémons</label
       >
@@ -69,10 +31,13 @@
         class="search-pokemon__input type--grass"
         id="searchPokemonInput"
       />
-    </div>
+    </div> -->
 
-    <div id="pokemonCardsContainer" class="pokemon-cards"></div>
-    <script src="src/redux.js"></script>
+    <div id="pokemonCardsContainer" class="pokemon-cards">
+      <div class="loading">
+        <span></span>
+      </div>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
