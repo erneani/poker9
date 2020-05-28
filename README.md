@@ -13,6 +13,7 @@ pokémon data.
 
 ## Project Structure
 
+```
 +-- src
 | +-- js
 | | +-- index.js - Compiled JS file (using TSC).
@@ -28,3 +29,4 @@ pokémon data.
 +-- package.json - Project settings
 +-- README.md - README documentation file.
 +-- tsconfig.json - JSON file with the TS configurations.
+```
