@@ -1,0 +1,25 @@
+.loading {
+  flex-direction: row;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+}
+
+.loading span {
+  border: 10px solid transparent;
+  border-top-color: #4b4b4b;
+  border-left-color: #4b4b4b;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
