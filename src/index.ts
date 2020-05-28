@@ -1,3 +1,4 @@
+const displayDiv = document.querySelector("#pokemonDisplay");
 const cardsDiv = document.querySelector("#pokemonCardsContainer");
 
 interface Pokemon {
@@ -7,7 +8,7 @@ interface Pokemon {
   weight: number;
   image: string;
   types: string[];
-  stats: { stat: string; value: number };
+  stats: { stat: string; value: number }[];
 }
 
 const populatePokemonCards = async (): Promise<void> => {
@@ -17,11 +18,65 @@ const populatePokemonCards = async (): Promise<void> => {
   }
 };
 
+const renderPokemonDisplay = (pokemonInfo: Pokemon): void => {
+  const mainType = pokemonInfo.types[pokemonInfo.types.length - 1];
+
+  const pokemonHTML = `
+    <div class="display__pokemon-properties type--${mainType}">
+      <div class="display__pokemon-info">
+        <h3 class="display__pokemon-info__number">
+          ${pokemonInfo.number.toString().padStart(3, "0")}
+        </h3>
+        <h1 class="display__pokemon-info__name">
+          ${pokemonInfo.name.charAt(0).toUpperCase}
+        </h1>
+        <div class="display__pokemon-info__tags">
+          ${pokemonInfo.types.map((type) => {
+            return `
+              <div class="display__pokemon-info__tags__item">${type}</div>
+            `;
+          })}
+        </div>
+        <div class="display__pokemon-info__basics">
+          <div class="display__pokemon-info__basics__item">
+            <b>Height: </b>${pokemonInfo.height / 10}m
+          </div>
+          <div class="display__pokemon-info__basics__item">
+            <b>Weight: </b>${pokemonInfo.weight / 10}kg
+          </div>
+        </div>
+      </div>
+      <div class="display__pokemon-stats">
+        <h3 class="display__pokemon-stats__title">Base stats</h3>
+        <span><b>HP: </b>100</span>
+        <span><b>Attack: </b>100</span>
+        <span><b>Defense: </b>100</span>
+        <span><b>SP. Attack: </b>100</span>
+        <span><b>SP. Defense: </b>100</span>
+      </div>
+    </div>
+    <div class="display__pokemon-image-wrapper">
+      <img
+        src="${pokemonInfo.image}"
+        alt="${pokemonInfo.name} image"
+        class="display__pokemon-image-wrapper__image"
+      />
+    </div>
+  `;
+
+  if (displayDiv) {
+    displayDiv.innerHTML = pokemonHTML;
+  }
+};
+
 const renderPokemonCard = (pokemonInfo: Pokemon): void => {
   const mainType = pokemonInfo.types[pokemonInfo.types.length - 1];
 
   const pokemonHTML = `
-    <div class="pokemon-card">
+    <div 
+      class="pokemon-card" 
+      onclick="${() => store.dispatch(renderPokemonDisplay(pokemonInfo))}"
+    >
       <div
         class="pokemon-card__image-wrapper type--${mainType}"
       >

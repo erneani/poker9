@@ -3,7 +3,7 @@ body {
   margin: 2rem 1.5rem;
 }
 
-#pokemon-display {
+#pokemonDisplay {
   background-color: rgba(255, 0, 0, 0.6);
   justify-content: space-between;
   flex-direction: row;
