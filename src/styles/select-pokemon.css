@@ -1,6 +1,7 @@
 .pokemon-select__title {
   font-weight: bold;
-  font-size: 36px;
+  text-align: center;
+  font-size: 68px;
   color: rgba(0, 0, 0, 0.8);
 }
 
