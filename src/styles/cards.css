@@ -77,3 +77,9 @@
   color: #ffffff;
   background-color: #729f3f;
 }
+
+@media (max-width: 450px) {
+  #pokemonCardsContainer {
+    justify-content: center;
+  }
+}
