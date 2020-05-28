@@ -35,13 +35,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-var displayDiv = document.querySelector("#pokemonDisplay");
 var cardsDiv = document.querySelector("#pokemonCardsContainer");
 var populatePokemonCards = function () { return __awaiter(_this, void 0, void 0, function () {
-    var i, pokemon;
+    var pokemonCards, i, pokemon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                pokemonCards = "";
                 i = 1;
                 _a.label = 1;
             case 1:
@@ -49,30 +49,26 @@ var populatePokemonCards = function () { return __awaiter(_this, void 0, void 0,
                 return [4 /*yield*/, getPokemon(i)];
             case 2:
                 pokemon = _a.sent();
-                renderPokemonCard(pokemon);
+                pokemonCards += createPokemonCard(pokemon);
                 _a.label = 3;
             case 3:
                 i++;
                 return [3 /*break*/, 1];
-            case 4: return [2 /*return*/];
+            case 4:
+                if (cardsDiv) {
+                    cardsDiv.innerHTML = pokemonCards;
+                }
+                return [2 /*return*/];
         }
     });
 }); };
-var renderPokemonDisplay = function (pokemonInfo) {
+var createPokemonCard = function (pokemonInfo) {
     var mainType = pokemonInfo.types[pokemonInfo.types.length - 1];
-    var pokemonHTML = "\n    <div class=\"display__pokemon-properties type--" + mainType + "\">\n      <div class=\"display__pokemon-info\">\n        <h3 class=\"display__pokemon-info__number\">\n          " + pokemonInfo.number.toString().padStart(3, "0") + "\n        </h3>\n        <h1 class=\"display__pokemon-info__name\">\n          " + pokemonInfo.name.charAt(0).toUpperCase + "\n        </h1>\n        <div class=\"display__pokemon-info__tags\">\n          " + pokemonInfo.types.map(function (type) {
-        return "\n              <div class=\"display__pokemon-info__tags__item\">" + type + "</div>\n            ";
-    }) + "\n        </div>\n        <div class=\"display__pokemon-info__basics\">\n          <div class=\"display__pokemon-info__basics__item\">\n            <b>Height: </b>" + pokemonInfo.height / 10 + "m\n          </div>\n          <div class=\"display__pokemon-info__basics__item\">\n            <b>Weight: </b>" + pokemonInfo.weight / 10 + "kg\n          </div>\n        </div>\n      </div>\n      <div class=\"display__pokemon-stats\">\n        <h3 class=\"display__pokemon-stats__title\">Base stats</h3>\n        <span><b>HP: </b>100</span>\n        <span><b>Attack: </b>100</span>\n        <span><b>Defense: </b>100</span>\n        <span><b>SP. Attack: </b>100</span>\n        <span><b>SP. Defense: </b>100</span>\n      </div>\n    </div>\n    <div class=\"display__pokemon-image-wrapper\">\n      <img\n        src=\"" + pokemonInfo.image + "\"\n        alt=\"" + pokemonInfo.name + " image\"\n        class=\"display__pokemon-image-wrapper__image\"\n      />\n    </div>\n  ";
-    if (displayDiv) {
-        displayDiv.innerHTML = pokemonHTML;
-    }
-};
-var renderPokemonCard = function (pokemonInfo) {
-    var mainType = pokemonInfo.types[pokemonInfo.types.length - 1];
-    var pokemonHTML = "\n    <div \n      class=\"pokemon-card\" \n      onclick=\"" + function () { return store.dispatch(renderPokemonDisplay(pokemonInfo)); } + "\"\n    >\n      <div\n        class=\"pokemon-card__image-wrapper type--" + mainType + "\"\n      >\n        <div class=\"pokemon-card__image\">\n          <img\n            src=\"" + pokemonInfo.image + "\"\n            alt=\"" + pokemonInfo.name + " image\"\n          />\n        </div>\n      </div>\n      <div class=\"pokemon-card__content\">\n        <div class=\"pokemon-card__number\">\n          #" + pokemonInfo.number.toString().padStart(3, "0") + "\n        </div>\n        <div class=\"pokemon-card__name\">\n          " + pokemonInfo.name + "\n        </div>\n        <span class=\"pokemon-card__tag type--" + mainType + "\">\n          " + pokemonInfo.types[pokemonInfo.types.length - 1] + "\n        </span>\n      </div>\n    </div>\n  ";
-    if (cardsDiv) {
-        cardsDiv.innerHTML += pokemonHTML;
-    }
+    var pokemonName = "" + pokemonInfo.name
+        .charAt(0)
+        .toUpperCase() + pokemonInfo.name.slice(1);
+    var pokemonHTML = "\n    <div class=\"pokemon-card\" id=\"" + pokemonName + "\">\n      <div class=\"pokemon-card__image-wrapper type--" + mainType + "\">\n        <div class=\"pokemon-card__image\">\n          <img\n            src=\"" + pokemonInfo.image + "\"\n            alt=\"" + pokemonName + " image\"\n          />\n        </div>\n      </div>\n      <div class=\"pokemon-card__content\">\n        <div class=\"pokemon-card__number\">\n          #" + pokemonInfo.number.toString().padStart(3, "0") + "\n        </div>\n        <div class=\"pokemon-card__name\">\n          " + pokemonName + "\n        </div>\n        <span class=\"pokemon-card__tag type--" + mainType + "\">\n          " + pokemonInfo.types[pokemonInfo.types.length - 1] + "\n        </span>\n      </div>\n    </div>\n  ";
+    return pokemonHTML;
 };
 var getPokemon = function (pokemonId) { return __awaiter(_this, void 0, void 0, function () {
     var pokemonList, pokemonListJson;
